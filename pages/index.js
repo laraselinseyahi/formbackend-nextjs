@@ -35,8 +35,8 @@ const ContactForm = () => {
     e.preventDefault();
 
     const formData2 = new FormData();
-    formData2.append('globalfile', file2[0]);
-    formData2.append('patientfile', file2[1]);
+    formData2.append('globalfile', file1);
+    formData2.append('patientfile', file2);
     formData2.append('username', name);
 
     try {
