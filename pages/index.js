@@ -41,8 +41,7 @@ const ContactForm = () => {
 
     try {
       // Send question 2 data to /process-files
-      // const response = 
-      await fetch('https://backend101-7d354c8ad6cc.herokuapp.com/process-files', {
+      const response = await fetch('https://backend101-7d354c8ad6cc.herokuapp.com/process-files', {
         method: 'POST',
         body: formData2,
       });
@@ -79,15 +78,15 @@ const ContactForm = () => {
       <form className={styles.form}>
         <div>
           <label htmlFor="file1">Upload Global data sheet for visualisations </label>
-          <input type="file" id="file1" accept=".xlsx,.xls" onChange={(e) => setFile1(e.target.files[0])} />
+          <input type="file" id="file1" name="file1" accept=".xlsx,.xls" onChange={(e) => setFile1(e.target.files[0])} />
           <button type="submit" onClick={handleQuestion1Submit}>Submit Question 1</button>
         </div>
         <div>
           <label htmlFor="file2">Question 2: Upload Two Excel Sheets</label>
-          <input type="file" id="file2" accept=".xlsx,.xls" multiple onChange={(e) => setFile2(e.target.files)} />
+          <input type="file" id="file2" name="file2" accept=".xlsx,.xls" multiple onChange={(e) => setFile2(e.target.files)} />
           <div>
             <label htmlFor="name">Name</label>
-            <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+            <input type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
           </div>
           <button type="submit" onClick={handleQuestion2Submit}>Submit Question 2</button>
         </div>
