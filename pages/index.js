@@ -35,9 +35,9 @@ const ContactForm = () => {
     e.preventDefault();
 
     const formData2 = new FormData();
-    formData2.append('file1', file2[0]);
-    formData2.append('file2', file2[1]);
-    formData2.append('name', name);
+    formData2.append('globalfile', file2[0]);
+    formData2.append('patientfile', file2[1]);
+    formData2.append('username', name);
 
     try {
       // Send question 2 data to /process-files
