@@ -12,6 +12,13 @@
   border-radius: 5px;
 }
 
+.body {
+  background-image: url('../images/green.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 /* Add any additional styling as needed */
 
 
@@ -47,3 +54,4 @@
   color: #721c24;
   border-radius: 5px;
 }
+

@@ -90,25 +90,30 @@ const ContactForm = () => {
 
   return (
     <div className={styles.container}>
+      <body className={styles.body}>
       <form className={styles.form}>
         <div>
-          <label htmlFor="file1">Upload Global data sheet for visualisations </label>
+          <label htmlFor="file1"  className={styles.label}>Upload Global data sheet for visualisations </label>
           <input type="file" name="file1" id="file1" accept=".xlsx,.xls" onChange={(e) => setFile1(e.target.files[0])} />
-          <button type="submit" onClick={handleQuestion1Submit}>Submit Question 1</button>
+          <button type="submit" onClick={handleQuestion1Submit} className={styles.button}>Create Data Visualizations</button>
         </div>
         <div>
-          <label htmlFor="file2a">Question 2: Upload First Excel Sheet</label>
+          <label htmlFor="file2a" className={styles.label}>Upload global data sheet</label>
           <input type="file" name="file2a" id="file2a" accept=".xlsx,.xls" onChange={(e) => setFile2a(e.target.files[0])} />
-          <label htmlFor="file2b">Question 2: Upload Second Excel Sheet</label>
+        </div>
+        <div>
+          <label htmlFor="file2b" className={styles.label}>Upload patient data sheet</label>
           <input type="file" name="file2b" id="file2b" accept=".xlsx,.xls" onChange={(e) => setFile2b(e.target.files[0])} />
-          <div>
-            <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)} />
-          </div>
-          <button type="submit" onClick={handleQuestion2Submit}>Submit Question 2</button>
-
+        </div>
+        <div>
+          <label htmlFor="name" className={styles.label}>Input patient name</label>
+          <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+        </div>
+        <div>
+          <button type="submit" onClick={handleQuestion2Submit} className={styles.button}>Carry patient data to global</button>
         </div>
       </form>
+      </body>
     </div>
   );
 };
