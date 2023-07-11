@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import styles from "../styles/contactForm.module.css";
 
+
 const ContactForm = () => {
   const [file1, setFile1] = useState(null);
-  const [file2, setFile2] = useState(null);
+  const [file2a, setFile2a] = useState(null);
+  const [file2b, setFile2b] = useState(null);
   const [name, setName] = useState('');
 
   const handleQuestion1Submit = async (e) => {
@@ -20,7 +22,7 @@ const ContactForm = () => {
       });
 
       // Reset form fields
-      setFile1(null);
+      // setFile1(null);
 
       // Show success message
       alert('Question 1 submitted successfully!');
@@ -35,9 +37,11 @@ const ContactForm = () => {
     e.preventDefault();
 
     const formData2 = new FormData();
-    formData2.append('globalfile', file1);
-    formData2.append('patientfile', file2);
+    formData2.append('globalfile', file2a);
+    formData2.append('patientfile', file2b);
     formData2.append('username', name);
+
+
 
     try {
       // Send question 2 data to /process-files
@@ -58,8 +62,8 @@ const ContactForm = () => {
         link.click();
 
         // Reset form fields
-        setFile2(null);
-        setName('');
+       // setFile2(null);
+       // setName('');
 
         // Show success message
         alert('Question 2 submitted successfully!');
@@ -73,22 +77,26 @@ const ContactForm = () => {
     }
   };
 
+
   return (
     <div className={styles.container}>
       <form className={styles.form}>
         <div>
           <label htmlFor="file1">Upload Global data sheet for visualisations </label>
-          <input type="file" id="file1" name="file1" accept=".xlsx,.xls" onChange={(e) => setFile1(e.target.files[0])} />
+          <input type="file" name="file1" id="file1" accept=".xlsx,.xls" onChange={(e) => setFile1(e.target.files[0])} />
           <button type="submit" onClick={handleQuestion1Submit}>Submit Question 1</button>
         </div>
         <div>
-          <label htmlFor="file2">Question 2: Upload Two Excel Sheets</label>
-          <input type="file" id="file2" name="file2" accept=".xlsx,.xls" multiple onChange={(e) => setFile2(e.target.files)} />
+          <label htmlFor="file2a">Question 2: Upload First Excel Sheet</label>
+          <input type="file" name="file2a" id="file2a" accept=".xlsx,.xls" onChange={(e) => setFile2a(e.target.files[0])} />
+          <label htmlFor="file2b">Question 2: Upload Second Excel Sheet</label>
+          <input type="file" name="file2b" id="file2b" accept=".xlsx,.xls" onChange={(e) => setFile2b(e.target.files[0])} />
           <div>
             <label htmlFor="name">Name</label>
-            <input type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
+            <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)} />
           </div>
           <button type="submit" onClick={handleQuestion2Submit}>Submit Question 2</button>
+
         </div>
       </form>
     </div>
