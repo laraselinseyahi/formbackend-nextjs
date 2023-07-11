@@ -16,7 +16,7 @@ const ContactForm = () => {
 
     try {
       // Send question 1 data to /process-datavis
-      await fetch('https://backend101-7d354c8ad6cc.herokuapp.com/process-datavis', {
+      const response = await fetch('https://backend101-7d354c8ad6cc.herokuapp.com/process-datavis', {
         method: 'POST',
         body: formData1,
       });
