@@ -20,12 +20,22 @@ const ContactForm = () => {
         method: 'POST',
         body: formData1,
       });
-
-      // Reset form fields
-      // setFile1(null);
-
-      // Show success message
-      alert('Question 1 submitted successfully!');
+      
+      if (response.ok) {
+        const blob = await response.blob();
+  
+        // Create a download link for the HTML file
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'result.html';
+        link.click();
+  
+        // Show success message
+        alert('Question 1 submitted successfully!');
+      } else {
+        throw new Error('Response not OK');
+      }
     } catch (error) {
       console.error('Error:', error);
       // Show error message
