@@ -136,14 +136,19 @@ const ContactForm = () => {
           <input type="file" name="file1" id="file1" accept=".xlsx,.xls" onChange={(e) => setFile1(e.target.files[0])} />
           <button type="submit" onClick={handleQuestion1Submit} className={styles.button}>Create Global Data Visualizations</button>
         </div>
+        <div></div>
+        <div></div>
+        <div>
+          <label htmlFor="file3"  className={styles.label}>Upload Global data sheet for subset visualisations </label>
+          <input type="file" name="file3" id="file3" accept=".xlsx,.xls" onChange={(e) => setFile3(e.target.files[0])} />
         <div>
           <label htmlFor="name_patients" className={styles.label}>Input patient names for subset visualisations</label>
           <input type="text" name="name_patients" id="name_patients" value={name_patients} onChange={(e) => setName2(e.target.value)} />
         </div>
-        <div>
-          <label htmlFor="file3"  className={styles.label}>Upload Global data sheet for subset visualisations </label>
-          <input type="file" name="file3" id="file3" accept=".xlsx,.xls" onChange={(e) => setFile3(e.target.files[0])} />
           <button type="submit" onClick={handleQuestion3Submit} className={styles.button}>Create Subset Data Visualizations</button>
+        </div>
+        <div>
+        <div></div>
         </div>
         <div>
           <label htmlFor="file2a" className={styles.label}>Upload global data sheet</label>
