@@ -88,7 +88,7 @@ const ContactForm = () => {
     const formData2 = new FormData();
     formData2.append('globalfile', file2a);
     formData2.append('patientfile', file2b);
-    formData2.append('username', name_patients);
+    formData2.append('username', name);
 
 
 
